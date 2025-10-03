@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        
+        .video-container {
+            margin: 20px 0;
+        }
+        
+        .video-frame {
+            display: none;
+            border: 2px solid #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        
+        .play-button {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .play-button:hover {
+            background-color: #cc0000;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+        
+        .play-button:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <button class="play-button" onclick="showAndPlayVideo()">▶️ Запустить видео</button>
+        <iframe id="videoFrame" class="video-frame" width="1212" height="682" title="ПРОВЕРИЛ ХУДШИЕ ТЕМКИ. кстати неплохо заработал" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <script>
+        function showAndPlayVideo() {
+            const videoFrame = document.getElementById('videoFrame');
+            const button = document.querySelector('.play-button');
+            
+            // Показываем видео
+            videoFrame.style.display = 'block';
+            
+            // Добавляем параметры автовоспроизведения
+            videoFrame.src = "https://www.youtube.com/embed/PXqcHi2fkXI?autoplay=1"
+            
+            // Скрываем кнопку
+            button.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
